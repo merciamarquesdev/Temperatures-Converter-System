@@ -5,17 +5,17 @@ import java.util.Scanner;
 public class Principal {
 	
 	//Inicializando o programa
-    private static void initialize() {
-        System.out.println("\n ------ Bem vindo ao nosso conversor de temperaturas ------");
-    }
+	private static void initialize() {
+		System.out.println("\n ------ Bem vindo ao nosso conversor de temperaturas ------");
+	}
 	
-  //Unidades de entrada e de saida
+	//Unidades de entrada e de saida
   	private static UnityTemp getUnityTemp(String tipo) {
   		Scanner input = new Scanner(System.in);
   	    System.out.println("\nDigite a unidade de temperatura de " +tipo+": ");
   	    String unidade = input.nextLine();
   	    return UnityTemp.valueOf(unidade.toUpperCase());
-  	    }
+  	}
     
   	private static double getTemp() {
     	Scanner sc = new Scanner(System.in);
@@ -23,17 +23,16 @@ public class Principal {
         System.out.println("| Digite uma temperatura:                                |");
         System.out.println("----------------------------------------------------------");
 		return sc.nextDouble();
-  		}
+	}
 
     public static void main(String[] args) {
     	Scanner sc = new Scanner(System.in);
-        initialize();
-        
+    	initialize();
         System.out.println("\nDigite a quantidade de temperaturas que deseja converter: ");
-		int n = sc.nextInt();
+        int n = sc.nextInt();
         
         //Menu
-        System.out.println(" __________________________________________________________");
+		System.out.println(" __________________________________________________________");
 		System.out.println("|___________________________Menu___________________________|");
 		System.out.println("|                                                          |");
 		System.out.println("| Escolha uma das opções de unidade abaixo:                |");
@@ -45,7 +44,7 @@ public class Principal {
 				
 		//Definindo tipos de temperatura de entrada e de saida
 		UnityTemp unityInput = getUnityTemp("entrada");
-        UnityTemp unityOutput = getUnityTemp("saída");
+		UnityTemp unityOutput = getUnityTemp("saída");
 		
         //Criando arrays que vao guardar as temperaturas de entrada e de saida
 		GetTemp[] temperaturasEntrada = new GetTemp[n];
@@ -106,7 +105,7 @@ public class Principal {
 		double mediaSaida = (somaResultado)/temperaturasSaida.length;
 		System.out.println(" __________________________________________________________");
 		System.out.println("|___________________Média das Temperaturas_________________|");
-		System.out.println("|                                                                        |");  
+		System.out.println("|                                                          |");  
 		System.out.printf("| A média das temperaturas de entrada é: %.2fº %s",mediaEntrada,unityInput);  
 		System.out.println("\n|----------------------------------------------------------|");
 		System.out.printf("| A média das temperaturas de saída é: %.2fº %s",mediaSaida,unityOutput); 
