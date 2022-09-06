@@ -1,0 +1,2 @@
+# avaliacaoTemperatura
+ 
