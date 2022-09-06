@@ -7,22 +7,12 @@ public class Principal {
 	//Inicializando o programa
     private static void initialize() {
         System.out.println("\n ------ Bem vindo ao nosso conversor de temperaturas ------");
-        //Menu
-        System.out.println(" __________________________________________________________");
-		System.out.println("|___________________________Menu___________________________|");
-		System.out.println("|                                                          |");
-		System.out.println("| Escolha uma das opções de unidade abaixo:                |");
-		System.out.println("|----------------------------------------------------------|");
-		System.out.println("| CELSIUS                                                  |");
-		System.out.println("| FAHRENHEIT                                               |");
-		System.out.println("| KELVIN                                                   |");
-		System.out.println("|_____________________________*____________________________|");
     }
 	
   //Unidades de entrada e de saida
   	private static UnityTemp getUnityTemp(String tipo) {
   		Scanner input = new Scanner(System.in);
-  	    System.out.println("Digite a unidade de temperatura de " +tipo+": ");
+  	    System.out.println("\nDigite a unidade de temperatura de " +tipo+": ");
   	    String unidade = input.nextLine();
   	    return UnityTemp.valueOf(unidade.toUpperCase());
   	    }
@@ -33,7 +23,7 @@ public class Principal {
         System.out.println("| Digite uma temperatura:                                |");
         System.out.println("----------------------------------------------------------");
 		return sc.nextDouble();
-    }
+  		}
 
     public static void main(String[] args) {
     	Scanner sc = new Scanner(System.in);
@@ -41,7 +31,18 @@ public class Principal {
         
         System.out.println("\nDigite a quantidade de temperaturas que deseja converter: ");
 		int n = sc.nextInt();
-		
+        
+        //Menu
+        System.out.println(" __________________________________________________________");
+		System.out.println("|___________________________Menu___________________________|");
+		System.out.println("|                                                          |");
+		System.out.println("| Escolha uma das opções de unidade abaixo:                |");
+		System.out.println("|----------------------------------------------------------|");
+		System.out.println("| CELSIUS                                                  |");
+		System.out.println("| FAHRENHEIT                                               |");
+		System.out.println("| KELVIN                                                   |");
+		System.out.println("|_____________________________*____________________________|");
+				
 		//Definindo tipos de temperatura de entrada e de saida
 		UnityTemp unityInput = getUnityTemp("entrada");
         UnityTemp unityOutput = getUnityTemp("saída");
